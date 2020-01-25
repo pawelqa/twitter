@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
@@ -13,7 +13,14 @@
                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="${pageContext.request.contextPath}/login.jsp">Log in</a>
+                <c:choose>
+                    <c:when test="${sessionScope.currentUser != null}">
+                        <a class="nav-link" href="${pageContext.request.contextPath}/logout">Log out</a>
+                    </c:when>
+                    <c:otherwise>
+                        <a class="nav-link" href="${pageContext.request.contextPath}/login.jsp">Log in</a>
+                    </c:otherwise>
+                </c:choose>
             </li>
             <li class="nav-item">
                 <a class="nav-link disabled" href="#">Disabled</a>
