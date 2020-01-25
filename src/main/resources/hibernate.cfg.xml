@@ -4,9 +4,9 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.username">moZp32UmZx</property>
-        <property name="hibernate.connection.password">z1w4qfEqp5</property>
-        <property name="hibernate.connection.url">jdbc:mysql://remotemysql.com:3306/moZp32UmZx</property>
+        <!--        <property name="hibernate.connection.username">moZp32UmZx</property>-->
+        <!--        <property name="hibernate.connection.password">z1w4qfEqp5</property>-->
+        <!--        <property name="hibernate.connection.url">jdbc:mysql://remotemysql.com:3306/moZp32UmZx</property>-->
         <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
         <property name="show_sql">true</property>
         <mapping class="com.sda.twitter.persistance.entities.TbUser"/>

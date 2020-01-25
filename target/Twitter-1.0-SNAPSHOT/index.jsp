@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="com.sda.twitter.service.ArticleService"%>
-<%@ page import="com.sda.twitter.persistance.entities.TbArticle"%>
+<%@ page import="com.sda.twitter.persistance.entities.TbArticle" %>
 <%@ page import="java.util.List" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:useBean id="articleService" scope="request" class="com.sda.twitter.service.ArticleService"/>
