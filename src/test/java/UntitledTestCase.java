@@ -26,7 +26,7 @@ public class UntitledTestCase {
 
     @Test
     public void testUntitledTestCase() throws Exception {
-        driver.get("http://localhost:8081/");
+        driver.get("http://localhost:8081/login.jsp/");
         driver.findElement(By.linkText("Log in")).click();
         driver.findElement(By.id("inputLogin")).click();
         driver.findElement(By.id("inputLogin")).clear();
