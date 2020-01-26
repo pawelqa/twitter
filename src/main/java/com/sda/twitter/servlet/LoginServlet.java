@@ -20,11 +20,20 @@ public class LoginServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+        final String currentURIFromLoginJSP = request.getParameter("currentURIFromLoginJSP");
         try {
             TbUser tbUser = userService.getUserByUserName(username, password);
             HttpSession session = request.getSession();
             session.setAttribute("currentUser", tbUser);
-            response.sendRedirect("/");
+            if (currentURIFromLoginJSP == null
+                    || "login.jsp".equals(currentURIFromLoginJSP)
+                    || currentURIFromLoginJSP.isEmpty()) {
+                response.sendRedirect("/");
+            } else {
+
+                response.sendRedirect(currentURIFromLoginJSP);
+            }
+
         } catch (ImproperLoginCredentials improperLoginCredentials) {
             improperLoginCredentials.printStackTrace();
             response.sendRedirect("login.jsp");
